@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+</head>
+<body>
+    <h2>Form Registrasi SMK Sekolahku</h2>
+    <form action="">
+        <fieldset>
+            <legend>Data Calon Siswa</legend>
+            <p>Nama Calon Siswa: <input type="text" placeholder="Nama Calon Siswa"></p>
+            <p>Tempat Lahir: <input type="text" placeholder="Tempat Lahir"></p>
+            <p>Jenis Kelamin: <input type="radio" name="jenis_kelamin">Laki-laki 
+            <input type="radio" name="jenis_kelamin">Perempuan
+        </p>
+        <p>Alamat: <input type="text" placeholder="Alamat Anda"></p>
+        <p>Tanggal Lahir: <input type="date" name="tanggal_lahir"></p>
+        <p>NIK: <input type="text" placeholder="No. NIK"></p>
+        <p>NISN: <input type="text" placeholder="No. NISN"></p>
+        <p>Agama: <select name="agama">
+            <option value="islam">Islam</option>
+            <option value="kristen">Kristen</option>
+            <option value="katolik">Katolik</option>
+            <option value="hindu">Hindu</option>
+            <option value="buddha">Buddha</option>
+        </select></p>
+        <p>RT: <input type="text" placeholder="RT"></p>
+        <p>RW: <input type="text" placeholder="RW"></p>
+        <p>Nama Dusun: <input type="text" placeholder="Nama Dusun"></p>
+        <P>Nama Kelurahan : <input type="text" placeholder="Nama Kelurahan Anda"></P>
+        <p>Nama Kecamatan :  <input type="text" placeholder="Kecamatan Anda"></p>
+        <p>No. Handphone : <input type="tel" placeholder="No. Handphone Anda"></p>
+        </fieldset>
+        <br> <br>
+        <fieldset>
+            <legend>Data Ayah</legend>
+            <p>Nama Ayah : <input type="text" placeholder="Nama Ayah"></p>
+            <p>Tahun Lahir : <input type="text" placeholder="Contoh 1985"></p>
+            <p>Jenjang Pendidikan:
+                <select  name="" id="">
+                    <option value="">SD</option>
+                    <option value="">SMP</option>
+                    <option value="">SMK</option>
+                    <option value="">S1</option>
+                    <option value="">S2</option>
+                    <option value="">S3</option>
+                </select> 
+            </p>
+            <p>Pekerjaan : <input type="text" placeholder="Pekerjaan Ayah"></p>
+            <p>Penghasilan Per-Bulan : 
+                <input type="radio" name="penghasilan_ayah"> 3-5 Juta
+                <input type="radio" name="penghasilan_ayah"> 5-10 Juta
+                <input type="radio" name="penghasilan_ayah"> 10-15 Juta
+                <input type="radio" name="penghasilan_ayah"> Diatas Juta
+                <input type="radio" name="penghasilan_ayah"> Dibawah 3 Juta
+            </p>
+        </fieldset>
+        <br> <br>
+        <fieldset>
+            <legend>Data Ibu</legend>
+            <p>Nama Ibu : <input type="text" placeholder="Nama Ayah"></p>
+            <p>Tahun Lahir : <input type="text" placeholder="Contoh 1985"></p>
+            <p>Jenjang Pendidikan:
+                <select  name="" id="">
+                    <option value="">SD</option>
+                    <option value="">SMP</option>
+                    <option value="">SMK</option>
+                    <option value="">S1</option>
+                    <option value="">S2</option>
+                    <option value="">S3</option>
+                </select> 
+            </p>
+            <p>Pekerjaan : <input type="text" placeholder="Pekerjaan Ibu"></p>
+            <p>Penghasilan Per-Bulan : 
+                <input type="radio" name="penghasilan_Ibu"> 3-5 Juta
+                <input type="radio" name="penghasilan_Ibu"> 5-10 Juta
+                <input type="radio" name="penghasilan_Ibu"> 10-15 Juta
+                <input type="radio" name="penghasilan_Ibu"> Diatas Juta
+                <input type="radio" name="penghasilan_Ibu"> Dibawah 3 Juta
+            </p>
+        </fieldset>
+        <br> <br>
+        <fieldset>
+            <legend>Data Wali</legend>
+            <p>Nama Wali : <input type="text" placeholder="Nama Ayah"></p>
+            <p>Tahun Lahir : <input type="text" placeholder="Contoh 1985"></p>
+            <p>Jenjang Pendidikan:
+                <select  name="" id="">
+                    <option value="">SD</option>
+                    <option value="">SMP</option>
+                    <option value="">SMK</option>
+                    <option value="">S1</option>
+                    <option value="">S2</option>
+                    <option value="">S3</option>
+                </select> 
+            </p>
+            <p>Pekerjaan : <input type="text" placeholder="Pekerjaan Wali"></p>
+            <p>Penghasilan Per-Bulan : 
+                <input type="radio" name="penghasilan_Wali"> 3-5 Juta
+                <input type="radio" name="penghasilan_Wali"> 5-10 Juta
+                <input type="radio" name="penghasilan_Wali"> 10-15 Juta
+                <input type="radio" name="penghasilan_Wali"> Diatas Juta
+                <input type="radio" name="penghasilan_Wali"> Dibawah 3 Juta
+            </p>
+        </fieldset>
+            <p>Pilih Jurusan :
+                <select name="" id="">
+                    <option value=""> Teknik Komputer dan Jaringan </option>
+                    <option value=""> Rekayasa Perangkat Lunak </option>
+                    <option value=""> Multimedia </option>
+                </select>
+            </p>
+            <details>
+                <summary>Pernyataan</summary>
+              <p><input type="checkbox">Saya Menyatakan dengan sesungguhnya behwa isian data dalam formulir ini adalah benar. apabila ternyata data tersebut tidak benar/palsu, maka saya bersedia menerima sanksi berupa pembatalan sebagai calon peserta didik.</p>   
+            </details>
+            <br>
+           <button type="submit">Kirim Data</button>
+    </form>
+</body>
+</html>
