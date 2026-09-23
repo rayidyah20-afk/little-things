@@ -1,0 +1,1322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #faf6f0;
+  --paper: #fffdf9;
+  --pink: #e8d6d8;
+  --pink-soft: #f4e8e8;
+  --sage: #cdd8c6;
+  --sage-dark: #7c8974;
+  --brown: #655d58;
+  --brown-light: #9a918b;
+  --yellow: #eee2bc;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* =================================
+   BASIC PAGE
+================================= */
+
+.page {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  padding: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(35px);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    visibility 0.65s ease;
+
+  overflow: hidden;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+/* =================================
+   BACKGROUND DOTS
+================================= */
+
+.page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    rgba(101, 93, 88, 0.08) 1px,
+    transparent 1px
+  );
+
+  background-size: 24px 24px;
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+/* =================================
+   OPENING
+================================= */
+
+.opening {
+  background:
+    radial-gradient(circle at 15% 20%, var(--pink-soft), transparent 30%),
+    radial-gradient(circle at 85% 80%, #e3eadf, transparent 32%), var(--cream);
+}
+
+.opening-content {
+  position: relative;
+  z-index: 5;
+
+  text-align: center;
+
+  width: min(600px, 90%);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+}
+
+.opening h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(75px, 11vw, 145px);
+  font-weight: 400;
+  line-height: 0.9;
+
+  margin: 25px 0;
+}
+
+.opening-text {
+  color: var(--brown-light);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.open-btn {
+  margin-top: 35px;
+
+  border: none;
+  border-radius: 50px;
+
+  padding: 14px 32px;
+
+  background: var(--brown);
+  color: white;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(101, 93, 88, 0.15);
+
+  transition: 0.3s ease;
+}
+
+.open-btn:hover {
+  background: var(--sage-dark);
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+.tiny-note {
+  margin-top: 20px;
+
+  font-family: "Caveat", cursive;
+  font-size: 19px;
+
+  color: var(--brown-light);
+
+  transform: rotate(-3deg);
+}
+
+/* =================================
+   DOODLES
+================================= */
+
+.doodle,
+.sticker,
+.floating-doodle {
+  position: absolute;
+
+  font-family: "Caveat", cursive;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+.star {
+  color: var(--sage-dark);
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 17%;
+  left: 18%;
+  font-size: 30px;
+}
+
+.star-2 {
+  right: 19%;
+  bottom: 18%;
+  font-size: 24px;
+
+  animation-delay: 1s;
+}
+
+.heart {
+  color: #c99ba2;
+
+  font-size: 29px;
+
+  animation: float 5s ease-in-out infinite;
+}
+
+.heart-1 {
+  right: 18%;
+  top: 27%;
+}
+
+.heart-2 {
+  left: 19%;
+  bottom: 23%;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+/* =================================
+   PAGE ONE
+================================= */
+
+.page-one {
+  background: #f5eee7;
+}
+
+.paper {
+  position: relative;
+
+  width: min(680px, 90%);
+
+  padding: 65px 70px 70px;
+
+  background: var(--paper);
+
+  box-shadow: 0 25px 70px rgba(101, 93, 88, 0.1);
+
+  transform: rotate(-1deg);
+
+  z-index: 5;
+}
+
+.paper::after {
+  content: "♡";
+
+  position: absolute;
+
+  right: 30px;
+  top: 24px;
+
+  font-size: 25px;
+
+  color: var(--pink);
+}
+
+.tape-top {
+  position: absolute;
+
+  width: 110px;
+  height: 27px;
+
+  top: -13px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(2deg);
+
+  background: rgba(232, 214, 216, 0.78);
+}
+
+.paper h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5.5vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  margin: 25px 0 30px;
+}
+
+.paper > p:not(.eyebrow) {
+  max-width: 560px;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: var(--brown-light);
+
+  margin-bottom: 18px;
+}
+
+.hand-note {
+  display: block;
+
+  margin-top: 25px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 23px;
+
+  color: var(--sage-dark);
+
+  transform: rotate(-4deg);
+}
+
+.sticker-flower {
+  top: 15%;
+  left: 9%;
+
+  font-size: 40px;
+
+  color: #c99da4;
+
+  transform: rotate(-12deg);
+}
+
+.sticker-star {
+  right: 9%;
+  bottom: 15%;
+
+  font-size: 32px;
+
+  color: var(--sage-dark);
+
+  transform: rotate(10deg);
+}
+
+/* =================================
+   CONVERSATION
+================================= */
+
+.page-two {
+  background: var(--pink-soft);
+}
+
+.conversation-card {
+  position: relative;
+
+  width: min(680px, 90%);
+
+  padding: 65px;
+
+  background: rgba(255, 253, 249, 0.72);
+
+  border: 1px solid rgba(101, 93, 88, 0.08);
+
+  box-shadow: 0 20px 60px rgba(101, 93, 88, 0.08);
+
+  transform: rotate(1deg);
+
+  z-index: 5;
+}
+
+.conversation-card h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(42px, 5.5vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  margin: 25px 0;
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+
+  background: var(--sage);
+
+  border-radius: 10px;
+
+  margin-bottom: 30px;
+}
+
+.conversation-card > p:not(.eyebrow) {
+  max-width: 560px;
+
+  color: var(--brown-light);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+}
+
+.side-note {
+  position: absolute;
+
+  right: 25px;
+  bottom: 20px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 20px;
+
+  color: #b58d93;
+
+  transform: rotate(5deg);
+}
+
+.doodle-one {
+  left: 14%;
+  top: 19%;
+
+  font-size: 38px;
+
+  color: #c99da4;
+}
+
+.doodle-two {
+  right: 15%;
+  bottom: 18%;
+
+  font-size: 32px;
+
+  color: var(--sage-dark);
+}
+
+/* =================================
+   PHOTO PAGE
+================================= */
+
+.photo-page {
+  background: var(--cream);
+}
+
+.photo-title {
+  position: absolute;
+
+  top: 8%;
+
+  width: min(700px, 90%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.photo-title h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(38px, 5vw, 58px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  margin: 14px auto;
+}
+
+.photo-title p:not(.eyebrow) {
+  color: var(--brown-light);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.photo-area {
+  position: absolute;
+
+  width: min(950px, 90%);
+
+  height: 78vh;
+
+  bottom: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.photo {
+  position: absolute;
+
+  width: 190px;
+  height: 240px;
+
+  padding: 9px;
+
+  background: var(--paper);
+
+  box-shadow: 0 20px 45px rgba(101, 93, 88, 0.15);
+
+  transition:
+    transform 0.35s ease,
+    z-index 0.2s;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.photo:hover {
+  transform: rotate(0) scale(1.07);
+
+  z-index: 30;
+}
+
+.tape {
+  position: absolute;
+
+  width: 65px;
+  height: 20px;
+
+  top: -10px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-2deg);
+
+  background: rgba(232, 214, 216, 0.82);
+
+  z-index: 4;
+}
+
+.photo-note {
+  position: absolute;
+
+  right: 5px;
+  bottom: -30px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 20px;
+
+  color: var(--brown-light);
+}
+
+.photo-1 {
+  left: 4%;
+  top: 27%;
+
+  transform: rotate(-8deg);
+}
+
+.photo-2 {
+  right: 4%;
+  top: 25%;
+
+  transform: rotate(7deg);
+}
+
+.photo-3 {
+  left: 27%;
+  bottom: 4%;
+
+  transform: rotate(5deg);
+}
+
+.photo-4 {
+  right: 27%;
+  bottom: 2%;
+
+  transform: rotate(-5deg);
+}
+
+.photo-doodle {
+  position: absolute;
+
+  right: 12%;
+  top: 18%;
+
+  font-size: 40px;
+
+  color: #c99da4;
+
+  transform: rotate(-12deg);
+}
+
+/* =================================
+   FOUR DAYS
+================================= */
+
+.four-days {
+  background: #edf1e9;
+}
+
+.days-content {
+  position: relative;
+
+  text-align: center;
+
+  z-index: 5;
+}
+
+.number {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(150px, 23vw, 280px);
+
+  line-height: 0.75;
+
+  color: var(--sage-dark);
+
+  margin: 50px 0 25px;
+}
+
+.tiny-label {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  background: var(--yellow);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  transform: rotate(-4deg);
+
+  margin-bottom: 25px;
+}
+
+.days-content > p:not(.eyebrow) {
+  max-width: 470px;
+
+  margin: auto;
+
+  color: var(--brown-light);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.big-note {
+  display: block;
+
+  margin-top: 20px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 27px;
+
+  color: var(--brown);
+
+  transform: rotate(-3deg);
+}
+
+.calendar-doodle {
+  position: absolute;
+
+  right: 17%;
+  top: 17%;
+
+  font-size: 45px;
+
+  color: #c69ca3;
+
+  transform: rotate(10deg);
+}
+
+/* =================================
+   RANDOM CHAT
+================================= */
+
+.random-page {
+  background: #f3eee8;
+}
+
+.random-content {
+  position: relative;
+
+  width: min(680px, 90%);
+
+  z-index: 5;
+}
+
+.random-content h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(40px, 5.5vw, 66px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  margin: 22px 0 30px;
+}
+
+.chat-container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin-top: 35px;
+}
+
+.chat {
+  max-width: 250px;
+
+  padding: 13px 18px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  box-shadow: 0 5px 15px rgba(101, 93, 88, 0.05);
+}
+
+.chat.left {
+  align-self: flex-start;
+
+  background: var(--paper);
+
+  border-bottom-left-radius: 5px;
+}
+
+.chat.right {
+  align-self: flex-end;
+
+  background: var(--sage);
+
+  border-bottom-right-radius: 5px;
+}
+
+.random-text {
+  max-width: 520px;
+
+  margin-top: 30px;
+
+  color: var(--brown-light);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.sticker-a {
+  position: absolute;
+
+  left: 14%;
+  top: 18%;
+
+  padding: 5px 15px;
+
+  background: var(--yellow);
+
+  border-radius: 10px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 30px;
+
+  transform: rotate(-8deg);
+}
+
+.sticker-b {
+  position: absolute;
+
+  right: 14%;
+  bottom: 18%;
+
+  padding: 5px 15px;
+
+  background: var(--pink);
+
+  border-radius: 10px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 30px;
+
+  transform: rotate(8deg);
+}
+
+/* =================================
+   ENDING
+================================= */
+
+.ending {
+  background:
+    radial-gradient(circle at 80% 20%, var(--pink-soft), transparent 30%),
+    var(--cream);
+}
+
+.ending-content {
+  width: min(620px, 90%);
+
+  text-align: center;
+
+  z-index: 5;
+}
+
+.ending h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(85px, 12vw, 145px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  margin: 25px 0 30px;
+}
+
+.ending-content > p:not(.eyebrow) {
+  color: var(--brown-light);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+}
+
+.ending h3 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 35px;
+
+  font-weight: 400;
+
+  margin-top: 45px;
+}
+
+.signature {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: "Caveat", cursive;
+
+  font-size: 24px;
+
+  color: var(--brown-light);
+}
+
+.ending-flower {
+  position: absolute;
+
+  left: 20%;
+  top: 18%;
+
+  font-size: 42px;
+
+  color: #c69da4;
+
+  transform: rotate(-15deg);
+}
+
+.ending-star {
+  position: absolute;
+
+  right: 20%;
+  bottom: 19%;
+
+  font-size: 32px;
+
+  color: var(--sage-dark);
+}
+
+/* =================================
+   NEXT BUTTON
+================================= */
+
+.next-btn {
+  position: absolute;
+
+  right: 0;
+  bottom: -70px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(101, 93, 88, 0.18);
+
+  background: rgba(255, 253, 249, 0.8);
+
+  color: var(--brown);
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  z-index: 20;
+}
+
+.next-btn:hover {
+  background: var(--brown);
+
+  color: white;
+
+  transform: translateX(5px);
+}
+
+/* =================================
+   MUSIC
+================================= */
+
+.music-btn {
+  position: fixed;
+
+  right: 22px;
+  bottom: 22px;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(101, 93, 88, 0.15);
+
+  background: rgba(255, 253, 249, 0.9);
+
+  color: var(--brown);
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  display: none;
+
+  z-index: 100;
+
+  backdrop-filter: blur(10px);
+}
+
+body.opened .music-btn {
+  display: block;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .page {
+    padding: 30px;
+  }
+
+  .paper,
+  .conversation-card {
+    width: 72%;
+  }
+
+  .photo-area {
+    width: 850px;
+  }
+
+  .photo {
+    width: 165px;
+    height: 210px;
+  }
+
+  .photo-1 {
+    left: 3%;
+  }
+
+  .photo-2 {
+    right: 3%;
+  }
+
+  .photo-3 {
+    left: 23%;
+  }
+
+  .photo-4 {
+    right: 23%;
+  }
+}
+
+/* =================================
+   HP
+================================= */
+
+@media (max-width: 700px) {
+  .page {
+    padding: 20px;
+  }
+
+  /* OPENING */
+
+  .opening-content {
+    width: 90%;
+  }
+
+  .opening h1 {
+    font-size: clamp(65px, 22vw, 90px);
+  }
+
+  .opening-text {
+    font-size: 14px;
+  }
+
+  .open-btn {
+    padding: 13px 29px;
+  }
+
+  .tiny-note {
+    font-size: 17px;
+  }
+
+  /* DOODLES */
+
+  .star-1 {
+    left: 8%;
+    top: 16%;
+  }
+
+  .star-2 {
+    right: 8%;
+    bottom: 16%;
+  }
+
+  .heart-1 {
+    right: 7%;
+    top: 24%;
+  }
+
+  .heart-2 {
+    left: 7%;
+    bottom: 21%;
+  }
+
+  /* PAPER */
+
+  .paper {
+    width: 92%;
+
+    padding: 52px 28px 62px;
+
+    transform: rotate(-0.6deg);
+  }
+
+  .paper h2 {
+    font-size: clamp(35px, 10vw, 48px);
+  }
+
+  .paper > p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .sticker-flower {
+    left: 2%;
+    top: 12%;
+    font-size: 32px;
+  }
+
+  .sticker-star {
+    right: 2%;
+    bottom: 12%;
+    font-size: 28px;
+  }
+
+  /* CONVERSATION */
+
+  .conversation-card {
+    width: 92%;
+
+    padding: 50px 28px;
+
+    transform: rotate(0.6deg);
+  }
+
+  .conversation-card h2 {
+    font-size: clamp(35px, 10vw, 48px);
+  }
+
+  .conversation-card > p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .doodle-one {
+    left: 5%;
+    top: 13%;
+  }
+
+  .doodle-two {
+    right: 5%;
+    bottom: 14%;
+  }
+
+  /* PHOTOS */
+
+  .photo-title {
+    top: 7%;
+    width: 90%;
+  }
+
+  .photo-title h2 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+
+  .photo-title p:not(.eyebrow) {
+    font-size: 13px;
+  }
+
+  .photo-area {
+    width: 100%;
+    height: 72vh;
+  }
+
+  .photo {
+    width: 135px;
+    height: 175px;
+  }
+
+  .photo-1 {
+    left: 2%;
+    top: 28%;
+  }
+
+  .photo-2 {
+    right: 2%;
+    top: 28%;
+  }
+
+  .photo-3 {
+    left: 8%;
+    bottom: 5%;
+  }
+
+  .photo-4 {
+    right: 8%;
+    bottom: 4%;
+  }
+
+  .photo-doodle {
+    right: 5%;
+    top: 23%;
+    font-size: 32px;
+  }
+
+  .photo-note {
+    font-size: 17px;
+  }
+
+  /* FOUR DAYS */
+
+  .number {
+    font-size: clamp(145px, 44vw, 185px);
+
+    margin: 45px 0 25px;
+  }
+
+  .calendar-doodle {
+    right: 7%;
+    top: 15%;
+
+    font-size: 35px;
+  }
+
+  .big-note {
+    font-size: 23px;
+  }
+
+  /* RANDOM */
+
+  .random-content {
+    width: 92%;
+  }
+
+  .random-content h2 {
+    font-size: clamp(34px, 10vw, 47px);
+  }
+
+  .chat {
+    max-width: 210px;
+
+    padding: 12px 15px;
+
+    font-size: 13px;
+  }
+
+  .random-text {
+    font-size: 13px;
+  }
+
+  .sticker-a {
+    left: 3%;
+    top: 11%;
+    font-size: 25px;
+  }
+
+  .sticker-b {
+    right: 3%;
+    bottom: 12%;
+    font-size: 25px;
+  }
+
+  /* ENDING */
+
+  .ending-content {
+    width: 90%;
+  }
+
+  .ending h2 {
+    font-size: clamp(80px, 25vw, 125px);
+  }
+
+  .ending-content > p:not(.eyebrow) {
+    font-size: 14px;
+  }
+
+  .ending h3 {
+    font-size: 29px;
+  }
+
+  .ending-flower {
+    left: 8%;
+    top: 14%;
+
+    font-size: 34px;
+  }
+
+  .ending-star {
+    right: 8%;
+    bottom: 14%;
+
+    font-size: 27px;
+  }
+
+  /* BUTTON */
+
+  .next-btn {
+    width: 44px;
+    height: 44px;
+
+    right: 0;
+    bottom: -62px;
+  }
+
+  /* MUSIC */
+
+  .music-btn {
+    width: 42px;
+    height: 42px;
+
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* =================================
+   HP KECIL
+================================= */
+
+@media (max-width: 380px) {
+  .page {
+    padding: 15px;
+  }
+
+  .paper {
+    padding: 45px 23px 58px;
+  }
+
+  .conversation-card {
+    padding: 43px 23px;
+  }
+
+  .paper h2,
+  .conversation-card h2 {
+    font-size: 34px;
+  }
+
+  .photo {
+    width: 115px;
+    height: 150px;
+  }
+
+  .photo-1 {
+    left: 1%;
+  }
+
+  .photo-2 {
+    right: 1%;
+  }
+
+  .photo-3 {
+    left: 6%;
+  }
+
+  .photo-4 {
+    right: 6%;
+  }
+
+  .number {
+    font-size: 140px;
+  }
+
+  .chat {
+    max-width: 185px;
+  }
+}
