@@ -111,114 +111,203 @@
       <div class="row">
         <!-- Menu 1 -->
         <div class="menu-card">
-          <img
-            src="img/menu/Matcha-latte.jpg"
-            alt="Matcha Latte"
-            class="menu-card-img"
-          />
+          <img src="img/menu/Matcha-latte.jpg" alt="Matcha Latte" />
 
-          <h3 class="menu-card-title">Matcha Latte</h3>
+          <h3>Matcha Latte</h3>
 
-          <p class="menu-card-price">IDR 18K</p>
+          <p>Rp 25.000</p>
+
+          <button
+            class="add-cart"
+            data-name="Matcha Latte"
+            data-price="25000"
+            data-image="img/menu/Matcha-latte.jpg"
+          >
+            Add to Cart
+          </button>
         </div>
 
         <!-- Menu 2 -->
         <div class="menu-card">
-          <img
-            src="img/menu/matchastrawberry.jpg"
-            alt="Strawberry Matcha"
-            class="menu-card-img"
-          />
+          <img src="img/menu/matchastrawberry.jpg" alt="Strawberry Matcha" />
 
-          <h3 class="menu-card-title">Strawberry Matcha</h3>
+          <h3>Strawberry Matcha</h3>
 
-          <p class="menu-card-price">IDR 22K</p>
+          <p>Rp 22.000</p>
+
+          <button
+            class="add-cart"
+            data-name="Strawberry Matcha"
+            data-price="22000"
+            data-image="img/menu/matchastrawberry.jpg"
+          >
+            Add to Cart
+          </button>
         </div>
 
         <!-- Menu 3 -->
         <div class="menu-card">
-          <img
-            src="img/menu/matchacream.jpg"
-            alt="Matcha Cream"
-            class="menu-card-img"
-          />
+          <div class="menu-card-img">
+            <img src="img/menu/matchacream.jpg" alt="Matcha Cream" />
+          </div>
 
-          <h3 class="menu-card-title">Matcha Cream</h3>
+          <h3>Matcha Cream</h3>
 
-          <p class="menu-card-price">IDR 20K</p>
+          <p class="price">IDR 20K</p>
+
+          <button
+            class="add-cart"
+            data-name="Matcha Cream"
+            data-price="20000"
+            data-image="img/menu/matchacream.jpg"
+          >
+            Add to Cart
+          </button>
         </div>
 
         <!-- Menu 4 -->
         <div class="menu-card">
-          <img
-            src="img/menu/matchabrownsugar.jpg"
-            alt="Brown Sugar Matcha"
-            class="menu-card-img"
-          />
+          <div class="menu-card-img">
+            <img src="img/menu/matchabrownsugar.jpg" alt="Brown Sugar Matcha" />
+          </div>
 
-          <h3 class="menu-card-title">Brown Sugar Matcha</h3>
+          <h3>Brown Sugar Matcha</h3>
 
-          <p class="menu-card-price">IDR 21K</p>
+          <p class="price">IDR 21K</p>
+
+          <button
+            class="add-cart"
+            data-name="Brown Sugar Matcha"
+            data-price="21000"
+            data-image="img/menu/matchabrownsugar.jpg"
+          >
+            Add to Cart
+          </button>
         </div>
 
         <!-- Menu 5 -->
         <div class="menu-card">
-          <img
-            src="img/menu/Hojicha.jpg"
-            alt="Hojicha Latte"
-            class="menu-card-img"
-          />
+          <div class="menu-card-img">
+            <img src="img/menu/Hojicha.jpg" alt="Hojicha Latte" />
+          </div>
 
-          <h3 class="menu-card-title">Hojicha Latte</h3>
+          <h3>Hojicha Latte</h3>
 
-          <p class="menu-card-price">IDR 20K</p>
+          <p class="price">IDR 20K</p>
+
+          <button
+            class="add-cart"
+            data-name="Hojicha Latte"
+            data-price="20000"
+            data-image="img/menu/Hojicha.jpg"
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </section>
     <!-- Menu Section End -->
 
-    <!-- Contact Section Start -->
-    <section id="contact" class="contact">
-      <h2><span>Contact</span> Us</h2>
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+      <h2>Contact <span>Us</span></h2>
 
       <p>Have something to ask? Send us a little message.</p>
 
       <div class="row">
-        <iframe
-          src="https://www.google.com/maps?q=SMKN+1+Kota+Bekasi&output=embed"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="map"
-        >
-        </iframe>
+        <!-- MAP -->
 
-        <form action="">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps?q=Bekasi&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <!-- FORM -->
+
+        <form>
           <div class="input-group">
             <i data-feather="user"></i>
 
-            <input type="text" placeholder="Your name" />
+            <input type="text" placeholder="Name" />
           </div>
 
           <div class="input-group">
             <i data-feather="mail"></i>
 
-            <input type="email" placeholder="Your email" />
+            <input type="email" placeholder="Email" />
           </div>
 
           <div class="input-group">
-            <i data-feather="phone"></i>
+            <i data-feather="message-circle"></i>
 
-            <input type="text" placeholder="Phone number" />
+            <input type="text" placeholder="Message" />
           </div>
 
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="contact-btn">Send Message</button>
         </form>
       </div>
     </section>
-    <!-- Contact Section End -->
 
-    <!-- Footer Start -->
+    <!-- =========================
+         CART SIDEBAR
+    ========================== -->
+
+    <div class="cart-sidebar" id="cart-sidebar">
+      <!-- CART HEADER -->
+
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+
+        <button id="close-cart">&times;</button>
+      </div>
+
+      <!-- CART ITEMS -->
+
+      <div class="cart-items" id="cart-items">
+        <p class="empty-cart">Your cart is empty ♡</p>
+      </div>
+
+      <!-- CART BOTTOM -->
+
+      <div class="cart-bottom">
+        <!-- TOTAL -->
+
+        <div class="cart-total">
+          <span> Total </span>
+
+          <strong id="total-price"> Rp 0 </strong>
+        </div>
+
+        <!-- CUSTOMER -->
+
+        <div class="customer-detail">
+          <h3>Customer Detail</h3>
+
+          <input type="text" id="customer-name" placeholder="Name" />
+
+          <input type="email" id="customer-email" placeholder="Email" />
+
+          <input type="tel" id="customer-phone" placeholder="Phone" />
+        </div>
+
+        <!-- CHECKOUT -->
+
+        <button class="checkout-btn" id="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
       <div class="socials">
         <a href="#">
@@ -235,28 +324,30 @@
       </div>
 
       <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
+        <a href="#"> Home </a>
+
+        <a href="#about"> About Us </a>
+
+        <a href="#menu"> Menu </a>
+
+        <a href="#contact"> Contact </a>
       </div>
 
       <div class="credit">
         <p>
-          Created with ♡ by
-          <a href="#">Littlé Things</a>
-          | &copy; 2026.
+          Created by
+          <a href="#"> Littlé Things. </a>
+          | &copy; 2026
         </p>
       </div>
     </footer>
-    <!-- Footer End -->
 
-    <!-- Feather Icons -->
+    <!-- FEATHER ICON -->
     <script>
       feather.replace();
     </script>
 
-    <!-- My Javascript -->
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
   </body>
 </html>
